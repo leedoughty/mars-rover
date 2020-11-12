@@ -11,10 +11,10 @@ displayCurrentEarthDate();
 
 function displayKennedySpaceCenterTime() {
   const kennedyTimeParagraph = document.querySelector("#kennedy-time");
-  const kennedyTime = earthDate.toLocaleTimeString("en-US", {
+  const kennedyTime = earthDate.toLocaleTimeString(undefined, {
     timeZone: "America/New_York",
   });
-  const kennedyTimeText = document.createTextNode(kennedyTime.split(" ")[0]);
+  const kennedyTimeText = document.createTextNode(kennedyTime);
 
   kennedyTimeParagraph.appendChild(kennedyTimeText);
 }
@@ -31,7 +31,7 @@ function displayOffsetTimeToKennedySpaceCenter() {
     " hours ahead of Kennedy Space Center"
   );
   const behindKennedy = document.createTextNode(
-    " hours ahead of Kennedy Space Center"
+    " hours behind of Kennedy Space Center"
   );
 
   if (timeBetweenKennedyAndUtc > 0) {
