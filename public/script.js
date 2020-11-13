@@ -28,10 +28,10 @@ function displayOffsetTimeToKennedySpaceCenter() {
   const kennedyOffset = document.createTextNode(timeBetweenKennedyAndUtc);
   kennedyOffsetTime.appendChild(kennedyOffset);
   const aheadOfKennedy = document.createTextNode(
-    " hours ahead of Kennedy Space Center"
+    " hours ahead of Kennedy Space Center)"
   );
   const behindKennedy = document.createTextNode(
-    " hours behind of Kennedy Space Center"
+    " hours behind of Kennedy Space Center)"
   );
 
   if (timeBetweenKennedyAndUtc > 0) {
