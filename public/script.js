@@ -21,18 +21,17 @@ displayKennedySpaceCenterTime();
 function displayOffsetTimeToKennedySpaceCenter() {
   const utcOffsetTimeInHours = earthDate.getTimezoneOffset() / 60;
   const timeBetweenKennedyAndUtc = utcOffsetTimeInHours + 5;
-  const aheadOfKennedy = document.createTextNode(
-    `${timeBetweenKennedyAndUtc} hours ahead of Kennedy Space Center)`
-  );
-  const behindKennedy = document.createTextNode(
-    `${timeBetweenKennedyAndUtc} hours behind of Kennedy Space Center)`
+  const isAhead = timeBetweenKennedyAndUtc > 0;
+
+  const timeBetweenKennedyandUtcText = document.createTextNode(
+    `${timeBetweenKennedyAndUtc} hours ${
+      isAhead ? "ahead" : "behind"
+    } of Kennedy Space Center)`
   );
 
-  if (timeBetweenKennedyAndUtc > 0) {
-    document.querySelector("#kennedy-offset").appendChild(aheadOfKennedy);
-  } else {
-    document.querySelector("#kennedy-offset").appendChild(behindKennedy);
-  }
+  document
+    .querySelector("#kennedy-offset")
+    .appendChild(timeBetweenKennedyandUtcText);
 }
 
 displayOffsetTimeToKennedySpaceCenter();
