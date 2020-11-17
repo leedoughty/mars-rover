@@ -19,7 +19,7 @@ calculateSol();
 
 function displayEarthDaysSinceMarsRoverLanded() {
   const millisecondsSinceMarsRoverLanded =
-    Date.now() - new Date(2012, 7, 6, 5, 17, 57).getTime();
+    new Date() - new Date(2012, 7, 6, 5, 17, 57);
   const roundedEarthDaysSinceMarsRoverLanded = Math.round(
     millisecondsSinceMarsRoverLanded / earthDayInMilliseconds
   );
