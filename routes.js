@@ -8,8 +8,6 @@ router.get("/photo", (request, response) => {
   response.send("Photo of the day");
 });
 
-router.get("/rover", (request, response) => {
-  response.send("Mars rover");
-});
+router.use("/rover", express.static("public/rover.html"));
 
 module.exports = router;
