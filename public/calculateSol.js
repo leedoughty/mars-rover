@@ -16,3 +16,19 @@ function calculateSol() {
 }
 
 calculateSol();
+
+function displayEarthDaysSinceMarsRoverLanded() {
+  const millisecondsSinceMarsRoverLanded =
+    Date.now() - new Date(2012, 7, 6, 5, 17, 57).getTime();
+  const roundedEarthDaysSinceMarsRoverLanded = Math.round(
+    millisecondsSinceMarsRoverLanded / earthDayInMilliseconds
+  );
+
+  document
+    .querySelector("#mars-rover-landing-date")
+    .append(
+      `The Mars Rover has been on Mars for ${roundedEarthDaysSinceMarsRoverLanded} days`
+    );
+}
+
+displayEarthDaysSinceMarsRoverLanded();
