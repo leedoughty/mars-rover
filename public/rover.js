@@ -4,9 +4,6 @@ const marsRoverSprite = document.getElementById("mars-rover-sprite");
 pathOfMarsRover.height = window.innerHeight;
 pathOfMarsRover.width = window.innerWidth;
 
-// pathOfMarsRover.setAttribute("style", `height: ${window.innerHeight}`);
-// pathOfMarsRover.setAttribute("style", `width: ${window.innerWidth}`);
-
 marsRoverSprite.style.position = "absolute";
 marsRoverSprite.style.left = "60%";
 
@@ -15,12 +12,8 @@ window.addEventListener("resize", (event) => {
   pathOfMarsRover.width = event.target.innerWidth;
 });
 
-//
-
 marsRoverSprite.addEventListener("mousedown", startDraggingImage);
-
 marsRoverSprite.addEventListener("mousemove", dragTheImage);
-
 marsRoverSprite.addEventListener("mouseup", stopDraggingImage);
 
 let currentX;
