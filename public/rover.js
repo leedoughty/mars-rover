@@ -12,17 +12,21 @@ const currentPosition = {
   y: 0,
 };
 
-let dragStartX;
-let dragStartY;
+const dragStart = {
+  dragStartX: 0,
+  dragStartY: 0,
+};
 
-let xOffset = 0;
-let yOffset = 0;
+const offset = {
+  xOffset: 0,
+  yOffset: 0,
+};
 
 let isDraggingImage = false;
 
 function startDraggingImage(event) {
-  dragStartX = event.clientX - xOffset;
-  dragStartY = event.clientY - yOffset;
+  dragStart.dragStartX = event.clientX - offset.xOffset;
+  dragStart.dragStartY = event.clientY - offset.yOffset;
 
   if (event.target === marsRoverSprite) {
     isDraggingImage = true;
@@ -33,19 +37,19 @@ function dragTheImage(event) {
   if (isDraggingImage) {
     event.preventDefault();
 
-    currentPosition.x = event.clientX - dragStartX;
-    currentPosition.y = event.clientY - dragStartY;
+    currentPosition.x = event.clientX - dragStart.dragStartX;
+    currentPosition.y = event.clientY - dragStart.dragStartY;
 
-    xOffset = currentPosition.x;
-    yOffset = currentPosition.y;
+    offset.xOffset = currentPosition.x;
+    offset.yOffset = currentPosition.y;
 
     marsRoverSprite.style.transform = `translate(${currentPosition.x}px, ${currentPosition.y}px)`;
   }
 }
 
 function stopDraggingImage() {
-  dragStartX = currentPosition.x;
-  dragStartY = currentPosition.y;
+  dragStart.dragStartX = currentPosition.x;
+  dragStart.dragStartY = currentPosition.y;
 
   isDraggingImage = false;
 }
