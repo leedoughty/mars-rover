@@ -7,43 +7,45 @@ marsRoverSprite.addEventListener("mousedown", startDraggingImage);
 marsRoverSprite.addEventListener("mousemove", dragTheImage);
 marsRoverSprite.addEventListener("mouseup", stopDraggingImage);
 
-let currentX;
-let currentY;
+const currentPosition = {
+  x: 0,
+  y: 0,
+};
 
-let dragStart;
-let firstY;
+let dragStartX;
+let dragStartY;
 
 let xOffset = 0;
 let yOffset = 0;
 
-let dragging = false;
+let isDraggingImage = false;
 
 function startDraggingImage(event) {
-  dragStart = event.clientX - xOffset;
-  firstY = event.clientY - yOffset;
+  dragStartX = event.clientX - xOffset;
+  dragStartY = event.clientY - yOffset;
 
   if (event.target === marsRoverSprite) {
-    dragging = true;
+    isDraggingImage = true;
   }
 }
 
 function dragTheImage(event) {
-  if (dragging) {
+  if (isDraggingImage) {
     event.preventDefault();
 
-    currentX = event.clientX - dragStart;
-    currentY = event.clientY - firstY;
+    currentPosition.x = event.clientX - dragStartX;
+    currentPosition.y = event.clientY - dragStartY;
 
-    xOffset = currentX;
-    yOffset = currentY;
+    xOffset = currentPosition.x;
+    yOffset = currentPosition.y;
 
-    marsRoverSprite.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    marsRoverSprite.style.transform = `translate(${currentPosition.x}px, ${currentPosition.y}px)`;
   }
 }
 
 function stopDraggingImage() {
-  dragStart = currentX;
-  firstY = currentY;
+  dragStartX = currentPosition.x;
+  dragStartY = currentPosition.y;
 
-  dragging = false;
+  isDraggingImage = false;
 }
