@@ -1,8 +1,5 @@
 const marsRoverSprite = document.getElementById("mars-rover-sprite");
 
-marsRoverSprite.style.position = "absolute";
-marsRoverSprite.style.left = "60%";
-
 marsRoverSprite.addEventListener("mousedown", startDraggingImage);
 marsRoverSprite.addEventListener("mousemove", dragTheImage);
 marsRoverSprite.addEventListener("mouseup", stopDraggingImage);
