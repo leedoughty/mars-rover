@@ -2,7 +2,9 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
   font-family: Helvetica, Arial, sans-serif;
+  background-color: rgb(200, 200, 200);
 }
 
 #intro-text {
@@ -51,4 +53,39 @@ body {
 
 #mars-rover-landing-date {
   text-align: center;
+}
+
+#mars-rover-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#mars-rover-sprite {
+  top: 5%;
+  left: 60vw;
+  height: auto;
+  position: absolute;
+}
+
+#path-of-mars-rover-desktop {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#path-of-mars-rover-mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  #path-of-mars-rover-desktop {
+    display: none;
+  }
+
+  #path-of-mars-rover-mobile {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
 }
