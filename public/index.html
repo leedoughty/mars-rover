@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mars Rover</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="displayPhoto.js"></script>
+  </head>
+  <body onload="displayPhoto()">
     <h1 id="intro-text">Beep-bop-boop... Welcome to the Mars Rover!</h1>
     <div id="date-container">
-        <p id="earth-date">Earth date: </p>
-        <p id="kennedy-offset">(You are: </p>
+      <p id="earth-date">Earth date:</p>
+      <p id="kennedy-offset">(You are:</p>
     </div>
-    <p id="kennedy-time">Kennedy Space Center time: </p>
+    <p id="kennedy-time">Kennedy Space Center time:</p>
     <p id="mars-sol"></p>
     <p id="mars-rover-landing-date"></p>
     <div class="image-container">
-        <img id="intro-image" src="mars-rover.jpg" alt="Mars Rover"></img>
+      <img id="photo-of-the-day" />
     </div>
+    <section class="photo-explanation-container">
+      <p id="photo-explanation"></p>
+    </section>
     <section class="link-container">
-        <a class="login-link" href="./login.html">Login to your Mars Rover account</a>
+      <a class="login-link" href="./login.html">
+        Login to your Mars Rover account
+      </a>
     </section>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="calculateSol.js"></script>
-</body>
+  </body>
 </html>
