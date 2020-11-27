@@ -1,8 +1,8 @@
-const checkUserCredentials = (request, response) => {
+const checkUserCredentials = (request, response, next) => {
   const { username, password } = request.body;
 
   if (username === "lee" && password === "marsrover") {
-    response.redirect("/");
+    return next();
   } else {
     response.send("Sorry, incorrect credentials provided! please try again");
   }
