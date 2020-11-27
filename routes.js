@@ -8,9 +8,23 @@ router.use(express.urlencoded({ extended: true }));
 
 router.use("/login", express.static("public/login.html"));
 
-router.post("/authenticate", (request, response) => {
-  response.send(request.body);
-});
+router.post(
+  "/authenticate",
+  (request, response, next) => {
+    const { username, password } = request.body;
+
+    if (username === "lee" && password === "marsrover") {
+      console.log("your in!");
+      next();
+    } else {
+      console.log("incorrect credentials");
+      response.send("Sorry, incorrect username and password provided");
+    }
+  },
+  (request, response) => {
+    response.send("you are now signed in");
+  }
+);
 
 router.get("/photo", getPhotoOfTheDay);
 
