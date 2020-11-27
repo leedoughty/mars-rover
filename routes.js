@@ -1,5 +1,6 @@
 const express = require("express");
 const { getPhotoOfTheDay } = require("./middleware/getPhotoOfTheDay");
+const { checkUserCredentials } = require("./middleware/checkUserCredentials");
 
 const router = express.Router();
 
@@ -7,6 +8,8 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 router.use("/login", express.static("public/login.html"));
+
+router.post("/authenticate", checkUserCredentials);
 
 router.get("/photo", getPhotoOfTheDay);
 
