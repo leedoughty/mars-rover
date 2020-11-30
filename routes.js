@@ -12,6 +12,10 @@ router.use("/login", express.static("public/login.html"));
 
 router.post("/authenticate", checkUserCredentials, setUserJwt);
 
+router.get("/username", (request, response) => {
+  response.send("Username");
+});
+
 router.get("/photo", getPhotoOfTheDay);
 
 router.use("/rover", express.static("public/rover.html"));
