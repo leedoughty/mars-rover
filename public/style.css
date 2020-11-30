@@ -97,3 +97,12 @@ body {
     object-fit: contain;
   }
 }
+
+.account-information {
+  border: 1px solid blue;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
