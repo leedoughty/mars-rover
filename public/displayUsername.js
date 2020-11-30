@@ -4,7 +4,6 @@ function displayUsername() {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       const username = document.getElementById("account-username");
       username.textContent += data.username;
     })
