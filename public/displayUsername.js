@@ -6,7 +6,7 @@ function displayUsername() {
     .then((data) => {
       console.log(data);
       const username = document.getElementById("account-username");
-      username.textContent = data.username;
+      username.textContent += data.username;
     })
     .catch((error) => {
       throw new Error(error);
