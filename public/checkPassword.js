@@ -14,7 +14,6 @@ form.addEventListener("input", (event) => {
 });
 
 form.addEventListener("submit", (event) => {
-  console.log(password.value.length);
   if (password.value.length < 6) {
     event.preventDefault();
   }
