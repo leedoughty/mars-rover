@@ -4,8 +4,13 @@ function displayUsername() {
       return response.json();
     })
     .then((data) => {
-      const username = document.getElementById("account-username");
-      username.textContent += data.username;
+      if (data.username) {
+        const username = document.getElementById("account-username");
+        username.textContent += data.username;
+      } else {
+        const username = document.getElementById("account-username");
+        username.textContent = "You are not signed in";
+      }
     })
     .catch((error) => {
       throw new Error(error);

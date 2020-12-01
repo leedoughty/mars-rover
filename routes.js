@@ -1,5 +1,4 @@
 const express = require("express");
-const passport = require("passport");
 const { getPhotoOfTheDay } = require("./middleware/getPhotoOfTheDay");
 const { checkUserCredentials } = require("./middleware/checkUserCredentials");
 const { setUserJwt } = require("./middleware/setUserJwt");
@@ -14,11 +13,7 @@ router.use("/login", express.static("public/login.html"));
 
 router.post("/authenticate", checkUserCredentials, setUserJwt);
 
-router.get(
-  "/username",
-  passport.authenticate("jwt", { session: false }),
-  getUsername
-);
+router.get("/username", getUsername);
 
 router.get("/photo", getPhotoOfTheDay);
 
