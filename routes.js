@@ -15,7 +15,8 @@ router.use("/register", express.static("public/register.html"));
 router.post("/authenticate", checkUserCredentials, setUserJwt);
 
 router.post("/register", (request, response) => {
-  response.send("User registered");
+  response.status(201);
+  response.send("user registered");
 });
 
 router.get("/username", getUsername);

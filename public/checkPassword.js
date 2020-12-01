@@ -10,7 +10,7 @@ warningMessage.appendChild(passwordContainsNoNumber);
 
 const containsNumber = /(\d)/;
 
-form.addEventListener("input", (event) => {
+password.addEventListener("input", (event) => {
   if (event.target.value.length < 6) {
     passwordLessThanSixCharacters.textContent =
       "Your password is less than 6 characters long!";
@@ -26,7 +26,7 @@ form.addEventListener("input", (event) => {
   }
 });
 
-form.addEventListener("submit", (event) => {
+password.addEventListener("submit", (event) => {
   if (password.value.length < 6) {
     event.preventDefault();
   }
