@@ -97,3 +97,7 @@ body {
     object-fit: contain;
   }
 }
+
+.account-information {
+  text-align: center;
+}
