@@ -8,7 +8,7 @@ warningMessage.appendChild(passwordLessThanSixCharacters);
 const passwordContainsNoNumber = document.createElement("p");
 warningMessage.appendChild(passwordContainsNoNumber);
 
-const doesNotContainNumber = /(\d)/;
+const containsNumber = /(\d)/;
 
 form.addEventListener("input", (event) => {
   if (event.target.value.length < 6) {
@@ -18,7 +18,7 @@ form.addEventListener("input", (event) => {
     passwordLessThanSixCharacters.textContent = "Password length: ✅";
   }
 
-  if (!doesNotContainNumber.test(event.target.value)) {
+  if (!containsNumber.test(event.target.value)) {
     passwordContainsNoNumber.textContent =
       "Your password needs to contain a number";
   } else {
@@ -31,7 +31,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
   }
 
-  if (!doesNotContainNumber.test(password.value)) {
+  if (!containsNumber.test(password.value)) {
     event.preventDefault();
   }
 });
