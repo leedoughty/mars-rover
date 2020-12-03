@@ -3,14 +3,14 @@ const password = form["password"];
 const warningMessage = document.getElementById("register-warning-message");
 
 const passwordLessThanSixCharacters = document.createElement("p");
-warningMessage.appendChild(passwordLessThanSixCharacters);
-
 const passwordContainsNoNumber = document.createElement("p");
-warningMessage.appendChild(passwordContainsNoNumber);
 
 const containsNumber = /(\d)/;
 
 password.addEventListener("input", (event) => {
+  warningMessage.appendChild(passwordLessThanSixCharacters);
+  warningMessage.appendChild(passwordContainsNoNumber);
+
   if (event.target.value.length < 6) {
     passwordLessThanSixCharacters.textContent =
       "Your password is less than 6 characters long!";
@@ -26,7 +26,7 @@ password.addEventListener("input", (event) => {
   }
 });
 
-password.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {
   if (password.value.length < 6) {
     event.preventDefault();
   }
