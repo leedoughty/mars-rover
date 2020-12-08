@@ -1,6 +1,6 @@
 const passport = require("passport");
 const JwtStrategy = require("passport-jwt").Strategy;
-const PRIVATE_KEY = require("./privateKey");
+const PRIVATE_KEY = require("../privateKey");
 
 function getJwt(request) {
   if (request) {

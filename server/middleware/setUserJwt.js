@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const PRIVATE_KEY = require("../privateKey");
+const PRIVATE_KEY = require("../../privateKey");
 
 const setUserJwt = (request, response) => {
   const { username, password } = request.body;

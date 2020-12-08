@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const API_KEY = require("../apiKey");
+const API_KEY = require("../../apiKey");
 const BASE_URL = "https://api.nasa.gov/planetary/apod";
 
 const checkStatus = (response) => {
