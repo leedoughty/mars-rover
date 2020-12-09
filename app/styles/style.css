@@ -29,11 +29,15 @@ body {
   padding: 30px 0 30px 0;
 }
 
-.photo-explanation-container {
+.explanation-container {
   width: 60vw;
   margin: auto;
   font-style: italic;
   color: grey;
+}
+
+#video-of-the-day {
+  display: none;
 }
 
 #earth-date {
