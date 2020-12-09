@@ -101,3 +101,15 @@ body {
 .account-information {
   text-align: center;
 }
+
+.no-script-banner {
+  background-color: rgb(237, 41, 57);
+  padding: 30px;
+}
+
+.no-script-text {
+  color: white;
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+}
