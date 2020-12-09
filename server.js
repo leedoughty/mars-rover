@@ -2,7 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const router = require("./server/routes/routes");
-const { passportConfiguration } = require("./config/passportConfiguration");
+const { passportConfiguration } = require("./server/passportConfiguration");
 
 const app = express();
 const port = 3000;
