@@ -15,7 +15,6 @@ const getPhotoOfTheDay = async (request, response, next) => {
   try {
     const apodResponse = await fetch(url).then(checkStatus);
     const apodJson = await apodResponse.json();
-    console.log(apodJson);
     response.json(apodJson);
   } catch (error) {
     return response.status(500).json({ error: error.toString() });
