@@ -36,6 +36,10 @@ body {
   color: grey;
 }
 
+#video-of-the-day {
+  display: none;
+}
+
 #earth-date {
   text-align: center;
 }

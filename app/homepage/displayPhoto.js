@@ -11,11 +11,18 @@ function displayPhoto() {
     .then(checkStatus)
     .then((response) => response.json())
     .then((data) => {
-      const photoOfTheDay = document.getElementById("photo-of-the-day");
-      const photoExplanation = document.getElementById("photo-explanation");
-      photoOfTheDay.setAttribute("src", `${data.url}`);
-      photoOfTheDay.setAttribute("alt", `${data.title}`);
-      photoExplanation.textContent = data.explanation;
+      if (data.media_type === "video") {
+        const videoOfTheDay = document.getElementById("video-of-the-day");
+        videoOfTheDay.setAttribute("style", "display: block");
+        videoOfTheDay.setAttribute("src", `${data.url}`);
+        videoOfTheDay.setAttribute("alt", `${data.title}`);
+      } else {
+        const photoOfTheDay = document.getElementById("photo-of-the-day");
+        const photoExplanation = document.getElementById("photo-explanation");
+        photoOfTheDay.setAttribute("src", `${data.url}`);
+        photoOfTheDay.setAttribute("alt", `${data.title}`);
+        photoExplanation.textContent = data.explanation;
+      }
     })
     .catch(() => {
       const photoOfTheDay = document.getElementById("photo-of-the-day");
