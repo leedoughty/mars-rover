@@ -1,4 +1,6 @@
 const express = require("express");
+const passport = require("passport");
+
 const { getPhotoOfTheDay } = require("../middleware/getPhotoOfTheDay");
 const { checkUserCredentials } = require("../middleware/checkUserCredentials");
 const { setUserJwt } = require("../middleware/setUserJwt");
@@ -23,6 +25,10 @@ router.get("/username", getUsername);
 
 router.get("/photo", getPhotoOfTheDay);
 
-router.use("/rover", express.static("app/rover-map"));
+router.use(
+  "/rover",
+  passport.authenticate("jwt", { session: false, failureRedirect: "/login" }),
+  express.static("app/rover-map")
+);
 
 module.exports = router;
