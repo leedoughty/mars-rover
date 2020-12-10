@@ -109,3 +109,4 @@ dist
 # Custom
 apiKey.js
 privateKey.js
+databaseCredentials.js
