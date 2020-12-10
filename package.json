@@ -24,7 +24,9 @@
     "jwt-decode": "^3.1.2",
     "node-fetch": "^2.6.1",
     "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
