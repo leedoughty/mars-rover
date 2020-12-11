@@ -1,18 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  background-color: #323f4b;
+  color: white;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: rgb(200, 200, 200);
+  font-family: "Space Grotesk", sans-serif;
 }
 
-#intro-text {
-  text-align: center;
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  align-items: center;
+}
+
+.heading {
+  text-decoration: none;
+}
+
+#nav-bar {
+  display: flex;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+#nav-bar .nav-link {
+  padding-left: 50px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link:focus {
+  text-decoration: underline;
+}
+
+#homepage {
+  display: grid;
+  margin-top: 40px;
+}
+
+#homepage .homepage-information {
+  grid-column: 1/2;
+  padding-left: 30px;
+}
+
+#homepage .photo-of-the-day {
+  grid-column: 2/4;
+}
+
+#mars-sprite {
+  width: 50%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  #homepage .homepage-information {
+    grid-column: 1/1;
+    padding-left: 30px;
+  }
+
+  #homepage .photo-of-the-day {
+    grid-column: 1/1;
+  }
 }
 
 #intro-image {
-  width: 60%;
+  width: 50vw;
   height: auto;
 }
 
@@ -24,47 +88,28 @@ body {
 
 .link-container {
   width: 100%;
-  text-align: center;
   font-size: 30px;
   padding: 30px 0 30px 0;
 }
 
 .explanation-container {
-  width: 60vw;
+  width: 40vw;
   margin: auto;
   font-style: italic;
-  color: grey;
+  color: white;
 }
 
 #video-of-the-day {
   display: none;
 }
 
-#earth-date {
-  text-align: center;
-}
-
-#date-container {
-  height: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-#kennedy-time {
-  text-align: center;
+#photo-of-the-day {
+  height: 50vh;
+  width: auto;
 }
 
 #kennedy-offset {
-  text-align: center;
-  color: rgb(150, 150, 150);
-}
-
-#mars-sol {
-  text-align: center;
-}
-
-#mars-rover-landing-date {
-  text-align: center;
+  color: #cbd2d9;
 }
 
 #mars-rover-container {
@@ -102,10 +147,6 @@ body {
   }
 }
 
-.account-information {
-  text-align: center;
-}
-
 .no-script-banner {
   background-color: rgb(237, 41, 57);
   padding: 30px;
@@ -116,4 +157,11 @@ body {
   width: 60vw;
   margin: auto;
   text-align: center;
+}
+
+/* LOGIN */
+
+.mars-sprite {
+  width: 30%;
+  height: auto;
 }
