@@ -63,18 +63,6 @@ body {
   width: 50%;
   height: auto;
 }
-
-@media (max-width: 800px) {
-  #homepage .homepage-information {
-    grid-column: 1/1;
-    padding-left: 30px;
-  }
-
-  #homepage .photo-of-the-day {
-    grid-column: 1/1;
-  }
-}
-
 #intro-image {
   width: 50vw;
   height: auto;
@@ -93,10 +81,15 @@ body {
 }
 
 .explanation-container {
-  width: 40vw;
-  margin: auto;
+  margin-top: 20px;
   font-style: italic;
   color: white;
+}
+
+#explanation {
+  width: 40vw;
+  height: auto;
+  margin: auto;
 }
 
 #video-of-the-day {
@@ -104,7 +97,7 @@ body {
 }
 
 #photo-of-the-day {
-  height: 50vh;
+  height: 80vh;
   width: auto;
 }
 
@@ -135,6 +128,20 @@ body {
 }
 
 @media (max-width: 800px) {
+  #homepage .homepage-information {
+    grid-column: 1/1;
+    padding-left: 30px;
+  }
+
+  #homepage .photo-of-the-day {
+    grid-column: 1/1;
+  }
+
+  #explanation {
+    width: 80vw;
+    height: auto;
+  }
+
   #path-of-mars-rover-desktop {
     display: none;
   }
@@ -159,9 +166,58 @@ body {
   text-align: center;
 }
 
-/* LOGIN */
+#login-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.register-link:focus {
+  text-decoration: underline;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+#login-container {
+  color: black;
+  background-color: #cbd2d9;
+  padding: 30px;
+  width: 50vw;
+  height: 30vh;
+  border-radius: 25px;
+}
 
 .mars-sprite {
-  width: 30%;
+  width: 30vw;
   height: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#register-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#register-container {
+  color: black;
+  background-color: #cbd2d9;
+  padding: 30px;
+  width: 50vw;
+  height: 30vh;
+  border-radius: 25px;
 }

@@ -16,17 +16,30 @@
         </p>
       </div>
     </noscript>
-    <h1>Register</h1>
-    <form method="POST" name="register" action="/register">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required />
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-      <input type="submit" value="Register" />
-    </form>
-    <div id="register-warning-message"></div>
+
+    <main id="register-page">
+      <section id="register-container">
+        <h1>Register</h1>
+        <p>Register for a Mars Rover account</p>
+        <form method="POST" name="register" action="/register">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+          <br/>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <br/>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <br/>
+          <input type="submit" value="Register" />
+          <br/>
+        </form>
+        <div id="register-warning-message"></div>
+      </main>
+      <div class="mars-sprite-container">
+        <img class="mars-sprite" src="mars-rover-sprite.svg" />
+      </div>
+      </section>
     <script type="text/javascript" src="checkPassword.js"></script>
   </body>
 </html>
