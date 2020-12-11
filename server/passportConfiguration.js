@@ -1,6 +1,7 @@
 const passport = require("passport");
 const JwtStrategy = require("passport-jwt").Strategy;
 const PRIVATE_KEY = require("./privateKey");
+const { Users } = require("./database/databaseModel");
 
 function getJwt(request) {
   if (request) {
@@ -19,11 +20,23 @@ function passportConfiguration() {
     new JwtStrategy(jwtOptions, (jwtPayload, done) => {
       const username = jwtPayload.username;
       const password = jwtPayload.password;
-      if (username === "lee" && password === "marsrover") {
-        done(false, jwtPayload);
-      } else {
-        done(false, false);
-      }
+
+      Users.findAll({
+        where: {
+          username: username,
+          password: password,
+        },
+      })
+        .then((databaseResponse) => {
+          if (databaseResponse[0]) {
+            return done(false, jwtPayload);
+          } else {
+            return done(false, false);
+          }
+        })
+        .catch((error) => {
+          throw new Error(error.message);
+        });
     })
   );
 }
