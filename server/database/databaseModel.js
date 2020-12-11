@@ -11,10 +11,6 @@ connectToDatabase.authenticate();
 const Users = connectToDatabase.define(
   "users",
   {
-    id: {
-      type: Sequelize.INTEGER,
-      primaryKey: true,
-    },
     username: {
       type: Sequelize.STRING,
     },
