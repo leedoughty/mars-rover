@@ -5,6 +5,7 @@ const { getPhotoOfTheDay } = require("../middleware/getPhotoOfTheDay");
 const { checkUserCredentials } = require("../middleware/checkUserCredentials");
 const { setUserJwt } = require("../middleware/setUserJwt");
 const { getUsername } = require("../middleware/getUsername");
+const { registerUser } = require("../middleware/registerUser");
 
 const router = express.Router();
 
@@ -16,10 +17,7 @@ router.use("/register", express.static("app/register"));
 
 router.post("/authenticate", checkUserCredentials, setUserJwt);
 
-router.post("/register", (request, response) => {
-  response.status(201);
-  response.send("user registered");
-});
+router.post("/register", registerUser, setUserJwt);
 
 router.get("/username", getUsername);
 
