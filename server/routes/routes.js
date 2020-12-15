@@ -6,6 +6,7 @@ const { checkUserCredentials } = require("../middleware/checkUserCredentials");
 const { setUserJwt } = require("../middleware/setUserJwt");
 const { getUsername } = require("../middleware/getUsername");
 const { registerUser } = require("../middleware/registerUser");
+const { logOut } = require("../middleware/logOut");
 
 const router = express.Router();
 
@@ -22,6 +23,8 @@ router.post("/register", registerUser, setUserJwt);
 router.get("/username", getUsername);
 
 router.get("/photo", getPhotoOfTheDay);
+
+router.get("/logout", logOut);
 
 router.use(
   "/rover",
