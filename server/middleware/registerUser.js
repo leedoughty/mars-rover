@@ -8,17 +8,16 @@ const registerUser = (request, response, next) => {
 
   Users.create({ username, password, email })
     .then(() => {
-      bcrypt
-        .hash(password, saltRounds)
-        .then((result) => {
-          return result;
-        })
-        .then((hash) => {
-          Users.update({ password: hash }, { where: { username: username } });
-        })
-        .then(() => {
-          next();
-        });
+      return bcrypt.hash(password, saltRounds);
+    })
+    .then((result) => {
+      return result;
+    })
+    .then((hash) => {
+      Users.update({ password: hash }, { where: { username: username } });
+    })
+    .then(() => {
+      next();
     })
     .catch((error) => {
       throw new Error(error.message);
