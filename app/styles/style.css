@@ -45,6 +45,15 @@ body {
   text-decoration: underline;
 }
 
+.account-information {
+  border: 1px solid #cbd2d9;
+  padding: 5px;
+}
+
+.logout-link {
+  color: white;
+}
+
 #homepage {
   display: grid;
   margin-top: 40px;
@@ -63,6 +72,7 @@ body {
   width: 50%;
   height: auto;
 }
+
 #intro-image {
   width: 50vw;
   height: auto;
