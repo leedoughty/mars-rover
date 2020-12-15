@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const { Users } = require("../database/databaseModel");
 
 const checkUserCredentials = (request, response, next) => {
@@ -6,11 +7,17 @@ const checkUserCredentials = (request, response, next) => {
   Users.findAll({
     where: {
       username: username,
-      password: password,
     },
   })
     .then((databaseResponse) => {
       if (databaseResponse[0]) {
+        return bcrypt.compare(password, databaseResponse[0].password);
+      } else {
+        response.redirect("/login");
+      }
+    })
+    .then((match) => {
+      if (match) {
         return next();
       } else {
         response.redirect("/login");

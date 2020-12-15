@@ -19,12 +19,10 @@ function passportConfiguration() {
   passport.use(
     new JwtStrategy(jwtOptions, (jwtPayload, done) => {
       const username = jwtPayload.username;
-      const password = jwtPayload.password;
 
       Users.findAll({
         where: {
           username: username,
-          password: password,
         },
       })
         .then((databaseResponse) => {
