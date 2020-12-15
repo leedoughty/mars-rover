@@ -10,9 +10,6 @@ const registerUser = (request, response, next) => {
     .then(() => {
       return bcrypt.hash(password, saltRounds);
     })
-    .then((result) => {
-      return result;
-    })
     .then((hash) => {
       Users.update({ password: hash }, { where: { username: username } });
     })
